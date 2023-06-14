@@ -1,46 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Coding Quiz</title>
 
-    <link rel="stylesheet" href="./CSS/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:ital,wght@1,600&display=swap" rel="stylesheet">
-  </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=arial' rel='stylesheet'>
+    <link rel="stylesheet" href="./style.css">
+    <title>Code Quiz</title>
+</head>
+<body>
+    <header>
+        <div>
+            <button class="btnHeader" id="view-high-scores">View High Scores</button>
+        </div>
+        <div>
+            <p>Time: <span id="timeLeft">xxx</span></p>
+        </div>
+         
+    </header>
 
-  <body>
-    <div class="scores"><a href="score.html">View Highscores</a></div>
+        <div id="mainDiv"> <!-- Container for grid -->
+            <div id="gridContainer">
+                <p id="questionDisplay">Welcome to our code Quiz!</p>
+                <p id="finalScoreDisplay"></p>
+                <p id="enterInitials"></p>
+                <textarea id=enterInitialsTextArea></textarea>
+                <button class="btn" id="start-quiz">Start Quiz</button>
+                <button class="btn" id="answer1"></button>
+                <button class="btn" id="answer2"></button>
+                <button class="btn" id="answer3"></button>
+                <button class="btn" id="answer4"></button>
+                <button class="btn" id="submitScore"></button> <!-- next item -->
 
-    <div class="timer">Time: <span id="time">0</span></div>
+            </div>
+            <div id="answerCorrectWrongGrid"></div>
+            <p id=answerCorrectWrong></p>
+            </div>
 
-    <div class="wrapper">
-      <div id="start-screen" class="start">
-        <h1>Coding Quiz Challenge</h1>
-        <p>
-          Let's see what you know!!!! Here are some code related questions. Answer them all as quickly as you can and try to get the HIGH SCORE, but note that incorrect answers will result in a 10 second score/time penalty. Don't worry, try as many times as you want!
-        </p>
-        <button id="start">Start Quiz</button>
-      </div>
-
-      <div id="questions" class="hide">
-        <h2 id="question-title"></h2>
-        <select id="choices" class="choices"></select>
-      </div>
-
-      <div id="end-screen" class="hide">
-        <h2>All done!</h2>
-        <p>Your final score is <span id="final-score"></span>.</p>
-        <p>
-          Enter initials: <input type="text" id="initials" max="3" />
-          <button id="submit">Submit</button>
-        </p>
-      </div>
-
-      <div id="feedback" class="feedback hide"></div>
-    </div>
-    <script src="./Java/JavaQuestions.js"></script>
-    <script src="./Java/script.js"></script>
-  </body>
+    </section>
+    
+    <script src="./script.js"></script>
+</body>
 </html>
