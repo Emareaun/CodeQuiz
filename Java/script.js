@@ -1,64 +1,75 @@
+var startButton = document.getElementById("start")
+var questionSection = document.getElementById("questions")
+var startPage = document.getElementById("start-screen")
+
 function startQuiz() {
-    // Initialize the timer and the question index.
+    console.log("startQuiz function started");
+
     var timer = 0;
     var questionIndex = 0;
+
+    console.log("Removing hide class from question section");
+    questionSection.classList.remove("hide");
+
+    console.log("Adding hide class to start page");
+    startPage.classList.add("hide");
+    showQuestion(questions[questionIndex]);
+    // while (questionIndex < questions.length) {
+
+    //   console.log("Showing question");
+    //   showQuestion(questions[questionIndex]);
+
+    //   console.log("Getting user answer");
+    //   var answer = getUserAnswer();
+
+    //   if (answer === questions[questionIndex].answer) {
+    //     console.log("User answered correctly, moving to next question");
+    //     questionIndex++;
+    //   } else {
+    //     console.log("User answered incorrectly, deducting 10 seconds from timer");
+    //     timer -= 10;
+    //   }
+    // }
   
-    // Start the quiz.
-    while (questionIndex < questions.length) {
-      // Display the question.
-      showQuestion(questions[questionIndex]);
-  
-      // Get the user's answer.
-      var answer = getUserAnswer();
-  
-      // Check the answer.
-      if (answer === questions[questionIndex].answer) {
-        // The answer is correct.
-        questionIndex++;
-      } else {
-        // The answer is incorrect.
-        timer -= 10;
-      }
-    }
-  
-    // The quiz is over.
-    showScore(timer);
-    saveScore(timer, initials);
+    console.log("Showing final score");
+    // showScore(timer);
+
+    // console.log("Saving score with initials");
+    // saveScore(timer, initials);
   }
   
-  function showQuestion(question) {
-    // Display the question text.
-    document.getElementById("question").innerHTML = question.text;
-  
-    // Display the answer options.
-    for (var i = 0; i < question.options.length; i++) {
-      var option = document.createElement("option");
-      option.value = question.options[i];
-      option.text = question.options[i];
-      document.getElementById("options").appendChild(option);
-    }
+
+function showQuestion(question) {
+  console.log("question", question);
+  console.log(question.title);
+  document.getElementById("question-title").innerHTML = question.title;
+
+  for (var i = 0; i < question.choices.length; i++) {
+   var option = document.createElement("option");
+    option.value = question.choices[i];
+    option.innerHTML=question.choices[i];
+    document.getElementById("choices").appendChild(option);
   }
+}
   
-  function getUserAnswer() {
-    // Get the user's answer from the select element.
-    var answer = document.getElementById("options").value;
+  // function getUserAnswer() {
+  //   var answer = document.getElementById("choices").value;
   
-    // Return the user's answer.
-    return answer;
-  }
+  //   return answer;
+  // }
   
   function showScore(timer) {
-    // Display the score.
     document.getElementById("score").innerHTML = timer;
   }
   
   function saveScore(timer, initials) {
-    // Save the score to the database.
     var score = {
       timer: timer,
       initials: initials
     };
   
-    // Save the score.
     db.saveScore(score);
+
   }
+
+  startButton.addEventListener("click", startQuiz)
