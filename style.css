@@ -10,7 +10,7 @@ body {
 }
 
 header {
-  display: flex; /* Flex container to display the child elements as flex with space between and wrap */
+  display: flex; 
   justify-content: space-between;
   flex-wrap: wrap;
   list-style: none;
@@ -28,7 +28,7 @@ header {
   background-color: white;
   text-decoration: none;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   color: orange;
   font-family: 'arial';font-size: 20px;
 }
@@ -44,7 +44,7 @@ header {
 .btn {
   border-radius: 12px;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   background-color: green;
   color: white;
   font-family: 'arial';font-size: 10px;
@@ -67,11 +67,10 @@ header {
 
 
 #gridContainer {
- /* width:65%; /* Contain the grid to a maximum of 80% of the flex wrapper */
   display: grid;
-  grid-template-columns: repeat(2, 1fr) 2fr 1fr;  /* Create a 4X4 grid of same size*/
-  grid-template-rows: repeat(10, 1fr); /* 4 rows of equal size */
-  gap: 10px 10px; /* Gap on x and y grid */
+  grid-template-columns: repeat(2, 1fr) 2fr 1fr; 
+  grid-template-rows: repeat(10, 1fr); 
+  gap: 10px 10px; 
   font-family: 'arial';font-size: 22px;
 }
 
@@ -117,7 +116,7 @@ header {
   padding: 10px 10px 10px 10px;
   border-radius: 10%;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   background-color: green;
   color: white;
   font-family: 'arial';font-size: 15px;
@@ -129,7 +128,7 @@ header {
   padding: 10px 10px 10px 10px;
   border-radius: 10%;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0;
   background-color: green;
   place-self: center;
   color: white;
@@ -142,7 +141,7 @@ header {
   padding: 10px 10px 10px 10px;
   border-radius: 10%;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   background-color: green;
   color: white;
   font-family: 'arial';font-size: 15px;
@@ -155,7 +154,7 @@ header {
   padding: 10px 10px 10px 10px;
   border-radius: 10%;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   background-color: green;
   color: white;
   font-family: 'arial';font-size: 15px;
@@ -170,7 +169,7 @@ header {
   padding: 10px 10px 10px 10px;
   border-radius: 10%;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   background-color: green;
   color: white;
   font-family: 'arial';font-size: 15px;
@@ -183,7 +182,7 @@ header {
   padding: 10px 10px 10px 10px;
   border-radius: 10%;
   border: 0;
-  outline: 0; /* Remove border around button */
+  outline: 0; 
   background-color: green;
   color: white;
   font-family: 'arial';font-size: 15px;
@@ -244,7 +243,6 @@ header {
 }
 
 
-/* screen smaller than 768px */
 @media screen and (max-width: 768px) {
 
 
@@ -306,8 +304,6 @@ header {
 
 }
 
-
- /*screen smaller than 575px*/
 
 @media screen and  (max-width: 575px) {
 
